@@ -13,17 +13,15 @@ $ brew install switchaudio-osx
 
 ## setup and configuration
 
-1. Import the Alfred [alfred-airpods-selector](https://github.com/paulsri/alfred-airpods-selector/blob/master/AirPods%20Selector.alfredworkflow) workflow by double-clicking the workflow file after downloading it.
+1. Import the Alfred [alfred-airpods-selector](https://github.com/notDavid/alfred-airpods-selector/blob/master/AirPods%20Selector.alfredworkflow?raw=true) workflow by double-clicking the workflow file after downloading it.
 1. Find your audio device names:
 
         $ SwitchAudioSource -a
 
 1. In the Alfred workflow tab update the bash script (2nd block in workflow) with the names of your audio devices from step #2 as well as the path to where SwitchAudioSource was installed:
 
+        airpods="David’s AirPods"       # <--- change this to your AirPods name
         switch="/usr/local/bin/SwitchAudioSource"
-        airpods="Paul’s AirPods"
-        mic="Built-in Microphone"
-        output="Built-in Output"
 
 _**Warning:** Sometimes curly apostrophes or curly double quotes can get you into trouble_
 
@@ -31,11 +29,14 @@ _**Warning:** Sometimes curly apostrophes or curly double quotes can get you int
 
 In Alfred type the following:
 
+> To Toggle Airpods on/off:
+    `airpods`
+
 > To Enable AirPods:
-> `airpods` or `airpods on` or `airpods blah`
+> `airpods on` or `airpods blah`
 
 > To Disable AirPods:
-> `airpods off`
+> `airpods off` or `airpods 0`
 
 *Note: You can type anything after 'airpods' except 'off' to enable the AirPods audio source.*
 
